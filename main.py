@@ -1,5 +1,8 @@
 import random
-que = int(input("Kindly guess a number btw the range of 1-100"))
+
+number = random.randint(1,100)
+
+start = 5
 
 def checker() :
 
@@ -11,12 +14,8 @@ def checker() :
     print("Too low")
     exit()
 
-  else:
-     determiner()
- 
-number = random.randint(1,100)
+  return True
 
-start = 5
 
 def determiner( ) :
    
@@ -33,4 +32,12 @@ def determiner( ) :
 
     print(f"You are now remaining with {start} chances to guess correctly")
 
-checker()
+
+
+while start > 0:
+  
+  que = int(input("Kindly guess a number btw the range of 1-100"))
+
+  if checker():
+     if determiner():
+       break
